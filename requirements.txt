@@ -1,0 +1,1 @@
+rasa~=2.0.2 # when updating, check the sdk version in the Dockerfile as well!
