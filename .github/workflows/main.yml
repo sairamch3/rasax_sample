@@ -76,8 +76,10 @@ jobs:
         # Upload model
         echo "------------------------"
         echo "$RASA_X_TOKEN"
-        curl -k --fail -H "Authorization: Bearer ${RASA_X_TOKEN}" -F "model=@${MODELNAME}" ${{ env.DOMAIN }}/projects/default/models
-        # ensure model is ready and tag as production
-        sleep 5
-        export MODEL=$(basename ${MODELNAME} .tar.gz)
-        curl --fail -XPUT -H "Authorization: Bearer ${RASA_X_TOKEN}" ${{ env.DOMAIN }}/projects/default/models/${MODEL}/tags/production
+        echo "$MODELNAME"
+        curl -k -F "model=@${MODELNAME}" "${{ env.DOMAIN }}/projects/default/models?api_token=${{env.RASA_X_API_TOKEN}}"
+        # curl -k --fail -H "Authorization: Bearer ${RASA_X_TOKEN}" -F "model=@${MODELNAME}" ${{ env.DOMAIN }}/projects/default/models
+        # # ensure model is ready and tag as production
+        # sleep 5
+        # export MODEL=$(basename ${MODELNAME} .tar.gz)
+        # curl --fail -XPUT -H "Authorization: Bearer ${RASA_X_TOKEN}" ${{ env.DOMAIN }}/projects/default/models/${MODEL}/tags/production
