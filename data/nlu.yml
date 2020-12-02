@@ -3,7 +3,7 @@ nlu:
 - intent: greet
   examples: |
     - hey
-    - hello this sifsfsad   adfasdfsdaf
+    - hello this sifsfsad adfasdfsdaf
     - how are u
     - added model
     - hello sairam thi
