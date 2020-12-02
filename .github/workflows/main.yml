@@ -72,7 +72,7 @@ jobs:
         echo "$model_path"
         y=${model_path%%.*}
         echo "modile path ${y}"
-        model_fileName= `basename "$model_path"`
+        model_fileName= `basename "$y"`
         echo "-------------------------------------------------------------------"
         echo "$model_fileName"
       # model_fileName= ${y##*/}
