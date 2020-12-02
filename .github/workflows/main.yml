@@ -70,6 +70,8 @@ jobs:
         echo "-------------------------------------------------------------------"
         echo "Inspecting ${model_path}"
         echo "$model_path"
-        model_fileName= "$(basename "$model_path" .tar.gz)"
-        echo "Inspecting modile${model_fileName}"
+        y=${model_path%%.*}
+        echo "modile path ${y}"
+        model_fileName= ${y##*/}
+        echo "$model_fileName"
       #curl -X PUT "https://847d64ebb2a9.ngrok.io/api/projects/default/models/${model_fileName}/tags/production?api_token=${RASA_X_API_TOKEN}"
