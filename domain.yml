@@ -11,7 +11,7 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How are u this is sai all is working good?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
