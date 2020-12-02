@@ -57,6 +57,8 @@ jobs:
         path: ${{ env.MODEL_DIRECTORY }}
 
     - name: Get path to model
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       run: |
         ls -R
         echo "::set-env name=MODELNAME::${{ env.MODEL_DIRECTORY }}/$(ls ${{ env.MODEL_DIRECTORY }})"
