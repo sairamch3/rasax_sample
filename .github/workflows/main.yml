@@ -60,7 +60,6 @@ jobs:
       if: env.RUN_TRAINING == 'true'
       working-directory: ${{ github.workspace }}
       run: |
-        sleep 50
         model_path=`ls models/*.tar.gz | head -n 1`
         echo "-----------------------------$model_path"
         curl -k -F "model=@${model_path}" "${{ env.DOMAIN }}/projects/default/models?api_token=${{env.RASA_X_API_TOKEN}}"
