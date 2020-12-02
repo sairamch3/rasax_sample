@@ -74,6 +74,8 @@ jobs:
           --data "{\"username\":\"${RASA_X_USERNAME}\",\"password\":\"${RASA_X_PASSWORD}\"}" \
           ${{ env.DOMAIN }}/auth | jq -r .access_token)
         # Upload model
+        echo "------------------------"
+        echo "$RASA_X_TOKEN"
         curl -k --fail -H "Authorization: Bearer ${RASA_X_TOKEN}" -F "model=@${MODELNAME}" ${{ env.DOMAIN }}/projects/default/models
         # ensure model is ready and tag as production
         sleep 5
