@@ -59,6 +59,8 @@ jobs:
       working-directory: ${{ github.workspace }}
       run: |
         model_path=`ls models/*.tar.gz | head -n 1`
-        model_fileName= `basename $model_path`
+        model_fileName= "${model_path%%.*}"
+        echo "-------------------------------------------------------------------"
+        echo "$model_fileName"
         curl -k -F "model=@${model_path}" "https://847d64ebb2a9.ngrok.io/api/projects/default/models?api_token=${RASA_X_API_TOKEN}"
         curl -X PUT "https://847d64ebb2a9.ngrok.io/api/projects/default/models/${model_fileName}/tags/production?api_token=${RASA_X_API_TOKEN}"
