@@ -20,7 +20,7 @@ nlu:
 - intent: goodbye
   examples: |
     - good afternoon
-    - good bye rasa active url
+    - good bye rasa url not working
     - good by
     - cee you later
     - good night
