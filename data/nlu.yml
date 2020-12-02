@@ -20,7 +20,7 @@ nlu:
 - intent: goodbye
   examples: |
     - good afternoon
-    - cu
+    - good bye rasa active url
     - good by
     - cee you later
     - good night
